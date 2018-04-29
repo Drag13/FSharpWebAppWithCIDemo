@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WebServer", "WebServer\WebServer.fsproj", "{08869108-0141-4978-BD0D-63D6825FFE97}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WebServer", "WebServer/WebServer.fsproj", "{08869108-0141-4978-BD0D-63D6825FFE97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1F7141B-CCD7-417B-A9D4-0A00C52A61DF}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Bll", "Bll\Bll.fsproj", "{7FE031B9-C4F4-4A50-A67E-2276FF6EFE13}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Bll", "Bll/Bll.fsproj", "{7FE031B9-C4F4-4A50-A67E-2276FF6EFE13}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BllTest", "BllTest\BllTest.fsproj", "{F1BE5C09-E383-4A65-BE5D-36B55B233912}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BllTest", "BllTest/BllTest.fsproj", "{F1BE5C09-E383-4A65-BE5D-36B55B233912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
