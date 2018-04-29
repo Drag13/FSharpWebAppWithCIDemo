@@ -5,7 +5,7 @@ open Bll
 
 [<Fact>]
 let ``Two greetings should be different`` () =
-    let firstGreeting = Say.hello
-    let secondGreeting = Say.hello
+    let firstGreeting = Say.hello()
+    let secondGreeting = Say.hello()
 
-    Assert.NotEqual(firstGreeting, secondGreeting)
+    Assert.NotEqual<string>(firstGreeting, secondGreeting)
