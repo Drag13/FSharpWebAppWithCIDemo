@@ -1,22 +1,23 @@
 namespace FSharpWebAppWithCIDemo
 
 module Program =
-
-    open System
+    
     open Microsoft.AspNetCore.Hosting
     open Microsoft.AspNetCore.Builder
-    open Startup
+    open Giraffe
+    open Giraffe.HttpStatusCodeHandlers.Successful
+
+    let exitCode = 0
 
     [<EntryPoint>]
-    let main _ =
+    let main args =
         WebHostBuilder()
             .UseKestrel()
-            .Configure(Action<IApplicationBuilder> (configureApp (app())))
-            .ConfigureServices(configureServices)
-            .UseWebRoot(webRoot)
-            .UseContentRoot(webRoot)
+            .ConfigureServices(fun services-> services.AddGiraffe()|>ignore)
+            .Configure(fun (appBuilder: IApplicationBuilder)-> 
+                appBuilder.UseGiraffe(GET >=> route "/" >=> OK "hello from Jiraffe"))
             .UseIISIntegration()
-            .ConfigureLogging(configureLogging)
             .Build()
             .Run()
-        0
+
+        exitCode
