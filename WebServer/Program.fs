@@ -1,26 +1,22 @@
 namespace FSharpWebAppWithCIDemo
 
-open System
-open System.Collections.Generic
-open System.IO
-open System.Linq
-open System.Threading.Tasks
-open Microsoft.AspNetCore
-open Microsoft.AspNetCore.Hosting
-open Microsoft.Extensions.Configuration
-open Microsoft.Extensions.Logging
-
 module Program =
-    let exitCode = 0
 
-    let BuildWebHost args =
-        WebHost
-            .CreateDefaultBuilder(args)
-            .UseStartup<Startup>()
-            .Build()
+    open System
+    open Microsoft.AspNetCore.Hosting
+    open Microsoft.AspNetCore.Builder
+    open Startup
 
     [<EntryPoint>]
-    let main args =
-        BuildWebHost(args).Run()
-
-        exitCode
+    let main _ =
+        WebHostBuilder()
+            .UseKestrel()
+            .Configure(Action<IApplicationBuilder> (configureApp (app())))
+            .ConfigureServices(configureServices)
+            .UseWebRoot(webRoot)
+            .UseContentRoot(webRoot)
+            .UseIISIntegration()
+            .ConfigureLogging(configureLogging)
+            .Build()
+            .Run()
+        0
