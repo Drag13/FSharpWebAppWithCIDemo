@@ -16,7 +16,6 @@ module Program =
             .ConfigureServices(fun services-> services.AddGiraffe()|>ignore)
             .Configure(fun (appBuilder: IApplicationBuilder)-> 
                 appBuilder.UseGiraffe(GET >=> route "/" >=> OK "hello from Jiraffe"))
-            .UseIISIntegration()
             .Build()
             .Run()
 
