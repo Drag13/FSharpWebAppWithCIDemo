@@ -11,3 +11,6 @@ Project has next tags you can use to navigate over:
 * NewFSharpProject
 * TravisSupport
 * CodeCov
+* DeployToAzure
+* IntroducingGiraffe
+* GiraffeViewEngine

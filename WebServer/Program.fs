@@ -1,11 +1,11 @@
-namespace FSharpWebAppWithCIDemo
+namespace Web
 
 module Program =
     
     open Microsoft.AspNetCore.Hosting
     open Microsoft.AspNetCore.Builder
     open Giraffe
-    open Giraffe.HttpStatusCodeHandlers.Successful
+    open Web.Views
 
     let exitCode = 0
 
@@ -15,7 +15,7 @@ module Program =
             .UseKestrel()
             .ConfigureServices(fun services-> services.AddGiraffe()|>ignore)
             .Configure(fun (appBuilder: IApplicationBuilder)-> 
-                appBuilder.UseGiraffe(GET >=> route "/" >=> OK "hello from Jiraffe"))
+                appBuilder.UseGiraffe(GET >=> route "/" >=> htmlView Landing.view))
             .Build()
             .Run()
 
