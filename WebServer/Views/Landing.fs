@@ -3,8 +3,8 @@
 module Landing = 
     open Giraffe.GiraffeViewEngine
 
-    let content = div [] [rawText "Hello from Giraffe"]
+    let content id = div [_class "landing"] [rawText ("Hello from Giraffe User# " + id)]
 
-    let view = Layout.render "OneTimePad" [content]
+    let view id = Layout.render "OneTimePad" [content id]
     
 

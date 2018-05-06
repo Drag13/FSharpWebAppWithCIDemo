@@ -9,13 +9,12 @@ module Layout =
                 link [_href "main.css"; _rel "stylesheet"]
                 title [] [encodedText pageTitle]
             ]
-            body [] [
-
-                nav [_class "nav-component"] [ rawText "FSharpWebAppWithCIDemo" ]
+            body [_class "site"] [
+                nav [_class "navigation"] [ rawText "FSharpWebAppWithCIDemo" ]
 
                 div [_class "content"] page
 
-                footer [_class "footer-component"] [encodedText "Footer is here 2018"]
+                footer [_class "footer"] [encodedText "Footer is here 2018"]
             ]
         ]   
 
